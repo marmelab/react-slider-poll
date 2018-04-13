@@ -4,7 +4,7 @@ import glamorous from 'glamorous';
 
 import Arrow from './Arrow';
 import IconButton from './IconButton';
-import colors from './colors';
+import { colors } from './util';
 
 export const Container = glamorous.div(
     {

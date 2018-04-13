@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import classnames from 'classnames';
 
-import mediaQueries from './mediaQueries';
-import transition from './transition';
+import { transition, mediaQueries } from './util';
 
 export const POSITION_OPEN = 'open';
 export const POSITION_DISMISSED = 'dismissed';

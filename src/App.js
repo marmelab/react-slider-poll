@@ -3,7 +3,7 @@ import { css } from 'glamor';
 
 import Drawer, { POSITION_DISMISSED } from './sliderPoll/Drawer';
 import SliderPoll from './sliderPoll/SliderPoll';
-import mediaQueries from './sliderPoll/mediaQueries';
+import { mediaQueries } from './sliderPoll/util';
 
 import logo from './logo.svg';
 import './App.css';
