@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import classnames from 'classnames';
 
-import { transition, colors } from './util';
+import { transition, colors } from '../util';
 
 const ArrowContainer = glamorous.svg({
     transition: transition(),

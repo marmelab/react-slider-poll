@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import classnames from 'classnames';
 
-import { mediaQueries, transition, rgba } from './util';
+import { mediaQueries, transition, rgba } from '../util';
 
 const IconButtonContainer = glamorous.div({
     display: 'flex',

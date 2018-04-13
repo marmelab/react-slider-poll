@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import glamorous from 'glamorous';
 
+import { ActionButton } from '../Button';
 import { transition, colors, mediaQueries } from '../util';
 
 const PaginationContainer = glamorous.div(
@@ -90,12 +91,12 @@ class Pagination extends PureComponent {
             <PaginationContainer
                 className={classnames({ hidden: !showPagination })}
             >
-                <button
+                <ActionButton
                     onClick={() => handleClickPrevious(step === 1)}
                     disabled={step === 1}
                 >
                     <span>Back</span>
-                </button>
+                </ActionButton>
                 {Array.from(Array(nbSteps).keys()).map(i => (
                     <Circle
                         key={i}
@@ -104,13 +105,13 @@ class Pagination extends PureComponent {
                         })}
                     />
                 ))}
-                <button
+                <ActionButton
                     onClick={() => handleClickNext(isLastStep)}
                     disabled={!stepSkippable && !nextStepAllowed}
                     primary
                 >
                     <span>{nextButtonContent}</span>
-                </button>
+                </ActionButton>
             </PaginationContainer>
         );
     }
