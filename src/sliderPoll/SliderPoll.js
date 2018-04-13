@@ -4,6 +4,7 @@ import glamorous from 'glamorous';
 
 import Arrow from './Arrow';
 import IconButton from './IconButton';
+import { Carousel } from './Carousel';
 import { colors } from './util';
 
 export const Container = glamorous.div(
@@ -28,10 +29,6 @@ const ButtonsContainer = glamorous.div({
     top: 0,
 });
 
-const exampleStyle = {
-    height: '380px',
-};
-
 class SliderPoll extends Component {
     constructor(props) {
         super(props);
@@ -49,16 +46,40 @@ class SliderPoll extends Component {
         like: null,
     };
 
+    shouldAllowNextStep = () => {
+        return true;
+    };
+
+    shouldAllowSkipStep = () => {
+        return false;
+    };
+
+    handleStepChange = step => {
+        this.setState({ step });
+    };
+
     render() {
         const { handleDismiss, handleReopen, isDismissed } = this.props;
         const { step, like } = this.state;
+
+        const allowNextStep = this.shouldAllowNextStep();
+        const stepSkippable = this.shouldAllowSkipStep();
 
         return (
             <Container
                 onClick={isDismissed && handleReopen}
                 isDismissed={isDismissed}
             >
-                <div style={exampleStyle}>Example text</div>
+                <Carousel
+                    step={step}
+                    handleStepChange={this.handleStepChange}
+                    nextStepAllowed={allowNextStep}
+                    stepSkippable={stepSkippable}
+                    showPagination={!isDismissed}
+                >
+                    <div>111111111111111</div>
+                    <div>222222222222222</div>
+                </Carousel>
                 <ButtonsContainer>
                     <IconButton
                         onClick={isDismissed ? handleReopen : handleDismiss}
