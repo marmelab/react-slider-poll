@@ -26,7 +26,7 @@ const PaginationContainer = glamorous.div(
     },
     {
         shouldClassNameUpdate: () => false,
-    },
+    }
 );
 
 const circleSize = 12;
@@ -47,7 +47,7 @@ export const Circle = glamorous.span(
     },
     {
         shouldClassNameUpdate: () => false,
-    },
+    }
 );
 
 class Pagination extends PureComponent {

@@ -37,7 +37,7 @@ const ButtonContainer = glamorous.span(
     },
     {
         shouldClassNameUpdate: () => false,
-    },
+    }
 );
 
 export default class Button extends Component {

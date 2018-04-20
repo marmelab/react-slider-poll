@@ -119,7 +119,7 @@ class Drawer extends Component {
                     handleFinish: this.handleFinish,
                     handleReopen: this.handleReopen,
                     isDismissed: [POSITION_DISMISSED, POSITION_CLOSED].includes(
-                        position,
+                        position
                     ),
                 })}
             </DrawerContainer>

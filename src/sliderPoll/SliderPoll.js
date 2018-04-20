@@ -15,7 +15,7 @@ export const Container = glamorous.div(
         padding: '1%',
         userSelect: 'none',
     },
-    ({ isDismissed }) => (isDismissed ? { cursor: 'pointer' } : {}),
+    ({ isDismissed }) => (isDismissed ? { cursor: 'pointer' } : {})
 );
 
 const ButtonsContainer = glamorous.div({

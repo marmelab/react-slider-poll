@@ -23,7 +23,7 @@ const CarouselContainer = glamorous.div(
         Object.assign({}, height, {
             width: `${numberOfSteps * 100}%`,
             marginLeft: `-${(step - 1) * 100}%`,
-        }),
+        })
 );
 
 export const StepContainer = glamorous.div(
@@ -40,7 +40,7 @@ export const StepContainer = glamorous.div(
         shouldClassNameUpdate: (prevProps, nextProps) =>
             prevProps.step !== nextProps.step ||
             prevProps.numberOfSteps !== nextProps.numberOfSteps,
-    },
+    }
 );
 
 const computeButtonLabel = (isLastStep, nextStepAllowed, stepSkippable) => {
@@ -124,7 +124,7 @@ export default class Carousel extends React.Component {
         const nextButtonContent = computeButtonLabel(
             isLastStep,
             nextStepAllowed,
-            stepSkippable,
+            stepSkippable
         );
 
         return (
