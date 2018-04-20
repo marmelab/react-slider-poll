@@ -1,19 +1,26 @@
 {
-  "name": "react-slider-poll",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "yarn": "^1.5.1"
-  }
+    "name": "react-slider-poll",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "react": "^16.3.1",
+        "react-dom": "^16.3.1",
+        "react-scripts": "1.1.4"
+    },
+    "devDependencies": {
+        "eslint": "~4.19.1",
+        "eslint-config-prettier": "~2.9.0",
+        "eslint-plugin-import": "~2.11.0",
+        "eslint-plugin-jsx-a11y": "~6.0.3",
+        "eslint-plugin-prettier": "~2.6.0",
+        "eslint-plugin-react": "~7.7.0",
+        "prettier": "~1.12.1",
+        "prettier-eslint-cli": "~4.7.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    }
 }
