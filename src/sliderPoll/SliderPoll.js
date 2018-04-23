@@ -54,12 +54,19 @@ class SliderPoll extends Component {
     };
 
     handleStepChange = step => {
+        const promise = this.props.handleSaveStep(this.state);
+
+        if (step > 2) {
+            promise.then(this.props.handleFinish);
+            return promise;
+        }
         this.setState({ step });
+        return promise;
     };
 
     render() {
         const { handleDismiss, handleReopen, isDismissed } = this.props;
-        const { step, like } = this.state;
+        const { step } = this.state;
 
         const allowNextStep = this.shouldAllowNextStep();
         const stepSkippable = this.shouldAllowSkipStep();
