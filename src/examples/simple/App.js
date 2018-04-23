@@ -30,18 +30,35 @@ const poll = {
 };
 
 class App extends Component {
+    state = {
+        poll: {
+            like: null,
+        },
+    };
+
+    handleSaveStep = poll => {
+        this.setState({ poll });
+        return Promise.resolve();
+    };
+
     render() {
+        const poll = this.state.poll;
+
         return (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
+                <section>{JSON.stringify(poll)}</section>
                 <Drawer
                     style={drawerPosition}
                     defaultPosition={POSITION_DISMISSED}
                 >
-                    <SliderPoll poll={poll} />
+                    <SliderPoll
+                        poll={poll}
+                        handleSaveStep={this.handleSaveStep}
+                    />
                 </Drawer>
             </div>
         );
