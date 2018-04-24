@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 
-import { IconButton, Arrow } from './Button';
-import { Carousel } from './Carousel';
-import { colors } from './util';
+import { IconButton, Arrow } from '../Button';
+import { Carousel } from '../Carousel';
+import { colors } from '../util';
 
 export const Container = glamorous.div(
     {
