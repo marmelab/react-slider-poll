@@ -39,6 +39,7 @@ class App extends Component {
     state = {
         poll: {
             like: null,
+            feeling: null,
         },
     };
 

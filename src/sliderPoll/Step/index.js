@@ -1,3 +1,4 @@
 import StepOne from './StepOne';
+import StepTwo from './StepTwo';
 
-export { StepOne };
+export { StepOne, StepTwo };

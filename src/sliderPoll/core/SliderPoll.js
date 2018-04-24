@@ -4,7 +4,7 @@ import glamorous from 'glamorous';
 
 import { IconButton, Arrow } from '../Button';
 import { Carousel } from '../Carousel';
-import { StepOne } from '../Step';
+import { StepOne, StepTwo } from '../Step';
 import { colors } from '../util';
 
 export const Container = glamorous.div(
@@ -45,6 +45,7 @@ class SliderPoll extends Component {
     state = {
         step: 1,
         like: null,
+        feeling: null,
     };
 
     shouldAllowNextStep = () => {
@@ -72,9 +73,15 @@ class SliderPoll extends Component {
         });
     };
 
+    handleFeelingChange = feeling => {
+        this.setState({
+            feeling,
+        });
+    };
+
     render() {
         const { handleDismiss, handleReopen, isDismissed } = this.props;
-        const { step, like } = this.state;
+        const { step, like, feeling } = this.state;
 
         const allowNextStep = this.shouldAllowNextStep();
         const stepSkippable = this.shouldAllowSkipStep();
@@ -96,7 +103,11 @@ class SliderPoll extends Component {
                         like={like}
                         handleLikeChange={this.handleLikeChange}
                     />
-                    <div>222222222222222</div>
+                    <StepTwo
+                        isDismissed={isDismissed}
+                        feeling={feeling}
+                        handleFeelingChange={this.handleFeelingChange}
+                    />
                 </Carousel>
                 <ButtonsContainer>
                     <IconButton
@@ -118,6 +129,7 @@ SliderPoll.propTypes = {
     isDismissed: PropTypes.bool,
     poll: PropTypes.shape({
         like: PropTypes.string,
+        feeling: PropTypes.number,
     }),
 };
 
