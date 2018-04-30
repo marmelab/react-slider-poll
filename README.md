@@ -10,3 +10,11 @@
 ``` sh
 make
 ```
+
+## TODO
+
+- [ ] Add step
+- [ ] Review Design
+- [ ] Clean code
+- [ ] Add test
+- [ ] Update readme
