@@ -58,9 +58,9 @@ const computeButtonLabel = (isLastStep, nextStepAllowed, stepSkippable) => {
 
 const stepHeights = [
     {
-        height: 360,
+        height: 250,
         [mediaQueries.tablet]: {
-            height: 380,
+            height: 250,
         },
     },
     {
