@@ -14,6 +14,7 @@ export const Container = glamorous.div(
         margin: '0 auto',
         padding: '1%',
         userSelect: 'none',
+        '-webkit-tap-highlight-color': 'transparent',
     },
     ({ isDismissed }) => (isDismissed ? { cursor: 'pointer' } : {})
 );
