@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { css } from 'glamor';
+import glamorous from 'glamorous';
 
 import Drawer, { POSITION_DISMISSED } from '../../sliderPoll/core/Drawer';
 import SliderPoll from '../../sliderPoll/core/SliderPoll';
@@ -25,23 +26,50 @@ const drawerPosition = css({
     },
 });
 
-const poll = {
-    like: true,
-};
+const PreCode = glamorous.pre({
+    textAlign: 'left',
+    margin: '5%',
+});
+
+const Code = glamorous.code({
+    whiteSspace: 'pre-wrap',
+});
 
 class App extends Component {
+    state = {
+        poll: {
+            like: null,
+            feeling: null,
+        },
+    };
+
+    handleSaveStep = poll => {
+        this.setState({ poll });
+        return Promise.resolve();
+    };
+
     render() {
+        const poll = this.state.poll;
+
         return (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
+                <section>
+                    <PreCode>
+                        <Code>{JSON.stringify(poll, undefined, 2)}</Code>
+                    </PreCode>
+                </section>
                 <Drawer
                     style={drawerPosition}
                     defaultPosition={POSITION_DISMISSED}
                 >
-                    <SliderPoll poll={poll} />
+                    <SliderPoll
+                        poll={poll}
+                        handleSaveStep={this.handleSaveStep}
+                    />
                 </Drawer>
             </div>
         );
