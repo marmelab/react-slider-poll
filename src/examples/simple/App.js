@@ -38,7 +38,7 @@ const Code = glamorous.code({
 class App extends Component {
     state = {
         poll: {
-            like: null,
+            useReactAdmin: null,
             feeling: null,
         },
     };
