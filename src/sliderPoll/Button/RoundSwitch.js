@@ -22,7 +22,11 @@ export default class RoundSwitch extends PureComponent {
                 value: PropTypes.any,
             })
         ),
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+        ]),
         onChange: PropTypes.func.isRequired,
         primary: PropTypes.bool,
     };

@@ -15,7 +15,7 @@ export const Container = glamorous.div(
         margin: '0 auto',
         padding: '1%',
         userSelect: 'none',
-        '-webkit-tap-highlight-color': 'transparent',
+        WebkitTapHighlightColor: 'transparent',
     },
     ({ isDismissed }) => (isDismissed ? { cursor: 'pointer' } : {})
 );
@@ -44,7 +44,7 @@ class SliderPoll extends Component {
 
     state = {
         step: 1,
-        like: null,
+        useReactAdmin: null,
         feeling: null,
     };
 
@@ -67,9 +67,9 @@ class SliderPoll extends Component {
         return promise;
     };
 
-    handleLikeChange = like => {
+    handleUseReactAdminChange = useReactAdmin => {
         this.setState({
-            like,
+            useReactAdmin,
         });
     };
 
@@ -81,7 +81,7 @@ class SliderPoll extends Component {
 
     render() {
         const { handleDismiss, handleReopen, isDismissed } = this.props;
-        const { step, like, feeling } = this.state;
+        const { step, useReactAdmin, feeling } = this.state;
 
         const allowNextStep = this.shouldAllowNextStep();
         const stepSkippable = this.shouldAllowSkipStep();
@@ -100,8 +100,10 @@ class SliderPoll extends Component {
                 >
                     <StepOne
                         isDismissed={isDismissed}
-                        like={like}
-                        handleLikeChange={this.handleLikeChange}
+                        useReactAdmin={useReactAdmin}
+                        handleUseReactAdminChange={
+                            this.handleUseReactAdminChange
+                        }
                     />
                     <StepTwo
                         isDismissed={isDismissed}
@@ -128,7 +130,7 @@ SliderPoll.propTypes = {
     handleSaveStep: PropTypes.func,
     isDismissed: PropTypes.bool,
     poll: PropTypes.shape({
-        like: PropTypes.string,
+        useReactAdmin: PropTypes.bool,
         feeling: PropTypes.number,
     }),
 };

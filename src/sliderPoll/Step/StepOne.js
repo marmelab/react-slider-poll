@@ -28,30 +28,34 @@ const SwitchContainer = glamorous.div(
 
 const options = [
     {
-        label: 'Like',
-        value: 'LIKE',
+        label: 'Yes',
+        value: true,
     },
     {
-        label: 'Dislike',
-        value: 'DISLIKE',
+        label: 'No',
+        value: false,
     },
 ];
 
 class StepOne extends PureComponent {
     render() {
-        const { isDismissed, like, handleLikeChange } = this.props;
+        const {
+            isDismissed,
+            useReactAdmin,
+            handleUseReactAdminChange,
+        } = this.props;
         return (
             <Container>
                 <DismissedContainer isDismissed={isDismissed}>
                     <StepNumber>Step 1</StepNumber>
                 </DismissedContainer>
-                <Question>Do you like my code ?</Question>
+                <Question>Have you already used React Admin?</Question>
                 <DismissedContainer isDismissed={isDismissed}>
                     <SwitchContainer>
                         <RoundSwitch
                             options={options}
-                            value={like}
-                            onChange={handleLikeChange}
+                            value={useReactAdmin}
+                            onChange={handleUseReactAdminChange}
                             primary
                         />
                     </SwitchContainer>
@@ -63,14 +67,14 @@ class StepOne extends PureComponent {
 
 StepOne.propTypes = {
     isDismissed: PropTypes.bool,
-    handleLikeChange: PropTypes.func,
-    like: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    handleUseReactAdminChange: PropTypes.func,
+    useReactAdmin: PropTypes.bool,
 };
 
 StepOne.defaultProps = {
     isDismissed: false,
-    like: null,
-    handleLikeChange: () => {},
+    useReactAdmin: null,
+    handleUseReactAdminChange: () => {},
 };
 
 export default StepOne;

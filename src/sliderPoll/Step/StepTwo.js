@@ -80,7 +80,7 @@ class StepTwo extends PureComponent {
                 <DismissedContainer isDismissed={isDismissed}>
                     <StepNumber>Step 2</StepNumber>
                 </DismissedContainer>
-                <Question>How confident do you feel about your view?</Question>
+                <Question>How confident do you feel about using it?</Question>
                 <DismissedContainer isDismissed={isDismissed}>
                     <SelectContainer>
                         <SquareSelect
