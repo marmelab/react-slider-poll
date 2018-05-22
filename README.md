@@ -8,13 +8,8 @@
 ## Get started
 
 ``` sh
-make
+make install
+make start
 ```
 
-## TODO
-
-- [ ] Add step
-- [ ] Review Design
-- [ ] Clean code
-- [ ] Add test
-- [ ] Update readme
+Article about this project on [Marmelab blog](https://marmelab.com/en/blog).
